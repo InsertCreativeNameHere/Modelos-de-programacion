@@ -1,8 +1,8 @@
 //AUTOR: BETAPANDERETA
 #include<iostream>
 #include<math.h>
-//# define PI           3.14159265358979323846  /* pi */		Constantes útiles, funciones trascendentes
-//# define e			2.71828182845904523536	/* e */
+//# define PI           3.14159265358979323846  /* pi */		Constantes Ãºtiles, funciones trascendentes
+//# define e		2.71828182845904523536	/* e */
 using namespace std;
 
 int main()
@@ -15,7 +15,7 @@ int main()
 	cout<<"Digite n: \t";cin>>n;
 	double num[n+1],num3[n+1],num4[n+1];
 	
-	if( n%2==0)//Evalua si n es par, de lo contrario, no se podrá ejecutar Simpson
+	if( n%2==0)//Evalua si n es par, de lo contrario, no se podrÃ¡ ejecutar Simpson
 	{	
 		Dx=(b-a)/n;
 		cout<<"DeltaX= "<<Dx<<"\n\n";
