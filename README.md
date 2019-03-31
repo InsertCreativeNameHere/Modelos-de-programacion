@@ -1,4 +1,4 @@
-# Modelos-de-programacion
-Modelos de programación xD
+# Modelos-de-programación
+Modelos de programación 
 
-Repositorio hecho para la clase de modelos de programacion 1
+Repositorio hecho para la clase de modelos de programación 1
