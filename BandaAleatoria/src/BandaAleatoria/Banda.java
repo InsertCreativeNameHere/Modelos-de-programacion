@@ -13,7 +13,7 @@ public class Banda {
         System.out.println("se han asignado: " + numeroDeMusicos);
     }
 
-    public void generarBanda() {
+    public void generarMusicos() {
         for (int i = 0; i <= numeroDeMusicos - 1; i++) {
             Musico m = new Musico();
             m.generarInstrumento(numeroDeMusicos);
