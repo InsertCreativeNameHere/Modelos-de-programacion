@@ -3,11 +3,11 @@ package BandaAleatoria;
 public class TrianguloElectrico implements Instrumento {
 
     //Atributos
-    private int disponibilidad;
+    
     private String nombre;
 
     public TrianguloElectrico() {
-        disponibilidad = (int) Math.floor(Math.random() * 2);
+        
         nombre = "Triangulo";
     }
 
@@ -19,14 +19,7 @@ public class TrianguloElectrico implements Instrumento {
         System.out.println("Tocando: " + nombre);                
     }
 
-    public int getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(int disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
-
+   
     public String getNombre() {
         return nombre;
     }

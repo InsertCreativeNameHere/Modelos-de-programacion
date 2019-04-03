@@ -3,12 +3,12 @@ package BandaAleatoria;
 public class Clarinete implements Instrumento {
 
     //Atributos
-    private int disponibilidad;
+    
     private String nombre;
 
     //Metodo constructor
     public Clarinete() {
-        disponibilidad = (int) Math.floor(Math.random() * 2);
+        
         nombre = "Clarinete";
     }
 
@@ -20,13 +20,7 @@ public class Clarinete implements Instrumento {
         System.out.println("Tocando: " + nombre);                
     }
 
-    public int getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(int disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
+    
 
     public String getNombre() {
         return nombre;

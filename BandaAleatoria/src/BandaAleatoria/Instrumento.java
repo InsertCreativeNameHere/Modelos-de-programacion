@@ -7,7 +7,7 @@ public interface Instrumento {
 
     public abstract void afinar();
     
-    public abstract int getDisponibilidad();
+    
     
     public abstract void reproducir();
 }
