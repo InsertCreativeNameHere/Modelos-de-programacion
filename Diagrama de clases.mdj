@@ -368,30 +368,13 @@
 											"height": 13,
 											"text": "-Instrumento",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFp5D1jSo/cmbA=",
-											"_parent": {
-												"$ref": "AAAAAAFp1Oryl/eG0Kw="
-											},
-											"model": {
-												"$ref": "AAAAAAFp5D1jF4/ZZ6U="
-											},
-											"font": "Arial;13;0",
-											"left": 565,
-											"top": 125,
-											"width": 204.1533203125,
-											"height": 13,
-											"text": "«Array»-instrumentosDisponibles",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 560,
 									"top": 105,
 									"width": 214.1533203125,
-									"height": 38
+									"height": 23
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -414,7 +397,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 565,
-											"top": 148,
+											"top": 133,
 											"width": 204.1533203125,
 											"height": 13,
 											"text": "+generarInstrumento()",
@@ -423,7 +406,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 560,
-									"top": 143,
+									"top": 128,
 									"width": 214.1533203125,
 									"height": 23
 								},
@@ -3129,17 +3112,6 @@
 								"$ref": "AAAAAAFp1Orylfd+Z7c="
 							},
 							"name": "Instrumento",
-							"visibility": "private",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFp5D1jF4/ZZ6U=",
-							"_parent": {
-								"$ref": "AAAAAAFp1Orylfd+Z7c="
-							},
-							"name": "instrumentosDisponibles",
-							"stereotype": "Array",
 							"visibility": "private",
 							"type": ""
 						}
