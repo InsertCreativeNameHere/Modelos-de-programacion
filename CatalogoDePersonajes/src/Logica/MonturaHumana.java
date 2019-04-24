@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -13,6 +15,7 @@ public class MonturaHumana implements Montura{
 
     private String clase; 
     private String descripcion;
+    private ImageIcon img;
 
     public String getClase() {
         return clase;
@@ -22,9 +25,15 @@ public class MonturaHumana implements Montura{
         return descripcion;
     }
 
+    public ImageIcon getImg() {
+        return img;
+    }
+
+
     public MonturaHumana() {
-        this.clase = "Humanos";
-        this.descripcion = "Los humanos utilizan como transporte principal animales del genero equino";
+        clase = "Humanos";
+        descripcion = "Los humanos utilizan como transporte principal animales del genero equino";
+        //img = new ImageIcon(<inserte la ruta de la imagen>);
     }
 
     

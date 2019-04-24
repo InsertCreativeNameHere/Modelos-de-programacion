@@ -11,7 +11,7 @@ package Logica;
  */
 public class ArmaduraHumana implements Armadura {
 
-   private String clase; 
+    private String clase;
     private String descripcion;
 
     public String getClase() {
@@ -26,6 +26,5 @@ public class ArmaduraHumana implements Armadura {
         this.clase = "Humanos";
         this.descripcion = "Los humanos utilizan ligeras armaduras principalmente hechas de tela y aleaciones de metal";
     }
-    
-    
+
 }

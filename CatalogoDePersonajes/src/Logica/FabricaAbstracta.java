@@ -21,5 +21,6 @@ public interface FabricaAbstracta {
     public Cuerpo getMiCuerpo();
     public Armadura getMiArmadura();
     public Montura getMiMontura();
-    
+    public Musica getMiMusica();
+    public Escritura getMiEscritura();
 }

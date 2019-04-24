@@ -5,6 +5,9 @@
  */
 package Logica;
 
+import java.awt.Font;
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author ldani
@@ -12,5 +15,6 @@ package Logica;
 public interface Ciudad {
     public String getDescripcion();
     public String getClase();
+    public BufferedImage getImg();
     
 }

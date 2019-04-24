@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -12,4 +14,5 @@ package Logica;
 public interface Cuerpo {
     public String getDescripcion();
     public String getClase();
+    public ImageIcon getImg();
 }
