@@ -34,6 +34,6 @@ public class MonturaTrygve implements Montura {
     public MonturaTrygve() {
         clase = "Trygves";
         descripcion = "Los Trygve no utilizan montura ya que pueden volar";
-        //img = new ImageIcon(<inserte la ruta de la imagen>);
+        img = new ImageIcon("img/Monturas/MonturaTrygve.png");
     }
 }

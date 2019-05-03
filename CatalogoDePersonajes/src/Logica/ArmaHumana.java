@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -12,7 +14,7 @@ package Logica;
 public class ArmaHumana implements Arma {
     private String clase; 
     private String descripcion;
-
+    private ImageIcon img;
     public String getClase() {
         return clase;
     }
@@ -20,11 +22,15 @@ public class ArmaHumana implements Arma {
     public String getDescripcion() {
         return descripcion;
     }
+    public ImageIcon getImg() {        
+        return img;
+    }
 
     public ArmaHumana() {
         this.clase = "Humanos";
         this.descripcion = "Los humanos utilizan katanas y arcos"
                 + ". Las katanas están hechas de colmillo de revenant (lobo salvaje de pradera) ";
+        img = new ImageIcon("img/Armas/ArmaHumano.png");
     }
 
     

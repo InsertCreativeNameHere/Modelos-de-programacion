@@ -41,7 +41,7 @@ public class CiudadElfo implements Ciudad {
                 + ", sus altos edificios dorados son simbolos de la magia de luz de los"
                 + " elfos que la habitan, su principal fuente de comercio son los hechizos,"
                 + " pociones y encantamientos. ";
-        img = ImageIO.read(new File("img/HighGarden.png"));
+        img = ImageIO.read(new File("img/Ciudades/HighGarden.png"));
     }
 
 }

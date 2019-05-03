@@ -40,7 +40,7 @@ public class CiudadTrygve implements Ciudad {
         descripcion = "Etheria es un pilar gigante de magia elemental, ya que los"
                 + " Trygve no necesitan de edificaciones, aunque si la utilizan como una fuente de"
                 + " energia (o alimento).";
-        img = ImageIO.read(new File("img/Etheria.png"));
+        img = ImageIO.read(new File("img/Ciudades/Etheria.png"));
     }
 
 }

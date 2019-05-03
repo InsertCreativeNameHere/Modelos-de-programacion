@@ -38,7 +38,7 @@ public class CiudadDoomSlayer implements Ciudad {
         this.descripcion = "La ciudad de los DoomSlayer es el mausoleo, una gigantezca cripta "
                 + " rodeada de poderosas y peligrosas bestias, la muerte es tan solo una mas"
                 + " de las caracteristicas de este lugar.";
-        this.img = ImageIO.read(new File("img/Mausoleo.png"));
+        this.img = ImageIO.read(new File("img/Ciudades/Mausoleo.png"));
     }
 
 

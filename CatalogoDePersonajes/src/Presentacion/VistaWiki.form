@@ -53,12 +53,20 @@
                       </Group>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblRaza" min="-2" pref="266" max="-2" attributes="0"/>
-                          <Component id="lblMontura" min="-2" pref="266" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="lblImagenCuerpo" min="-2" pref="266" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblImagenArma" pref="266" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lblImagenMontura" min="-2" pref="266" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblImagenArmadura" pref="266" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,6 +75,7 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblImagenArma" min="-2" pref="224" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="lblCiudad" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -76,13 +85,9 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="scrollCuerpo" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="lblRaza" min="-2" pref="224" max="-2" attributes="0"/>
+                  <Component id="lblImagenCuerpo" min="-2" pref="224" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="lblMontura" min="-2" pref="224" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -99,9 +104,17 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="scrollMontura" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblImagenArmadura" pref="224" max="32767" attributes="0"/>
+                          <Component id="lblImagenMontura" pref="224" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -190,9 +203,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblRaza">
+    <Component class="javax.swing.JLabel" name="lblImagenCuerpo">
     </Component>
-    <Component class="javax.swing.JLabel" name="lblMontura">
+    <Component class="javax.swing.JLabel" name="lblImagenMontura">
     </Component>
     <Component class="javax.swing.JLabel" name="lblCiudad">
       <Properties>
@@ -233,6 +246,10 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Montura"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblImagenArma">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblImagenArmadura">
     </Component>
   </SubComponents>
 </Form>

@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -13,6 +15,7 @@ public class ArmaduraHumana implements Armadura {
 
     private String clase;
     private String descripcion;
+    private ImageIcon img;
 
     public String getClase() {
         return clase;
@@ -22,9 +25,15 @@ public class ArmaduraHumana implements Armadura {
         return descripcion;
     }
 
+    public ImageIcon getImg() {
+
+        return img;
+    }
+
     public ArmaduraHumana() {
         this.clase = "Humanos";
         this.descripcion = "Los humanos utilizan ligeras armaduras principalmente hechas de tela y aleaciones de metal";
+        img = new ImageIcon("img/Armaduras/ArmaduraHumano.png");
     }
 
 }

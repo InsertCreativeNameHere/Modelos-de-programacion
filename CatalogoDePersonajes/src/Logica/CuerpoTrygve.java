@@ -33,7 +33,7 @@ public class CuerpoTrygve implements Cuerpo {
         clase = "Trygves";
         descripcion ="Los Trygve son seres elementales con forma humanoide, miden entre 1.40m y 1.50m"
                 + " y su cuerpo es energia pura";
-        img = new ImageIcon("img/Trygve.png");
+        img = new ImageIcon("img/Cuerpos/Trygve.png");
     }
     
 }

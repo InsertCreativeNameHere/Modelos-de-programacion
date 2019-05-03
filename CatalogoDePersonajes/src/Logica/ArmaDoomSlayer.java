@@ -5,14 +5,17 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
  */
 public class ArmaDoomSlayer implements Arma {
 
-     private String clase;
+    private String clase;
     private String descripcion;
+    private ImageIcon img;
 
     public String getClase() {
         return clase;
@@ -21,11 +24,14 @@ public class ArmaDoomSlayer implements Arma {
     public String getDescripcion() {
         return descripcion;
     }
+    public ImageIcon getImg() {
+        return img;
+    }
 
     public ArmaDoomSlayer() {
         this.clase = "DoomSlayers";
         this.descripcion = "El arma principal de los DoomSlayer es el cañon de Gauss, un tipo de cañon "
-                + "que utiliza un acelerador de energia infernal para disparar proyectiles a grandes velocidades.";
-                
+                + "que utiliza un acelerador de energia infernal para disparar proyectiles a grandes velocidades.";                
+        img = new ImageIcon("img/Armas/ArmaDoomSlayer.png");
     }
 }

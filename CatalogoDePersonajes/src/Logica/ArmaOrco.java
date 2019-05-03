@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -13,7 +15,7 @@ public class ArmaOrco implements Arma {
 
     private String clase;
     private String descripcion;
-
+    private ImageIcon img;
     public String getClase() {
         return clase;
     }
@@ -22,11 +24,17 @@ public class ArmaOrco implements Arma {
         return descripcion;
     }
 
+    public ImageIcon getImg() {
+
+        return img;
+    }
+
     public ArmaOrco() {
         this.clase = "Orcos";
         this.descripcion = "La principal arma de los orcos son los garrotes de madera, en su mayoria"
                 + " con puas de acero, aunque esto no les detiene de utilizar armas como hachas de"
                 + " guerra a dos manos.";
+        img = new ImageIcon("img/Armas/ArmaOrco.png");
     }
 
 }

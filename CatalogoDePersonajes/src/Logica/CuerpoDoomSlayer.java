@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  */
 public class CuerpoDoomSlayer implements Cuerpo {
 
-     private String clase;
+    private String clase;
     private String descripcion;
     private ImageIcon img;
 
@@ -34,7 +34,7 @@ public class CuerpoDoomSlayer implements Cuerpo {
         descripcion = "Los DoomSlayer miden entre 2.20m y 2.35m, son de constitucion extremadamente"
                 + " fuerte y resistente, la mayoria de ellos llevan uno de sus brazos con intensas quemaduras"
                 + ", esto como simbolo de su poder.";
-        img = new ImageIcon("img/Slayer.png");
+        img = new ImageIcon("img/Cuerpos/DoomSlayer.png");
     }
     
 }

@@ -22,7 +22,7 @@ public class VistaWiki extends javax.swing.JFrame {
         this.ponerTransparencias();
         this.ponerFondo(fabri.getMiCiudad().getImg());
         this.ponerTexto(fabri);
-        this.ponerImagen(fabri.getMiCuerpo().getImg(), fabri.getMiMontura().getImg());
+        this.ponerImagen(fabri.getMiCuerpo().getImg(), fabri.getMiMontura().getImg(), fabri.getMiArma().getImg(), fabri.getMiArmadura().getImg());
         this.AsignarFuente(fabri.getMiEscritura().getIdioma());
         this.ponerMusica(fabri.getMiMusica().getMusica());
      
@@ -119,13 +119,15 @@ public class VistaWiki extends javax.swing.JFrame {
         scrollArmadura = new javax.swing.JScrollPane();
         txtAreaArmadura = new javax.swing.JTextArea();
         btnVolver = new javax.swing.JButton();
-        lblRaza = new javax.swing.JLabel();
-        lblMontura = new javax.swing.JLabel();
+        lblImagenCuerpo = new javax.swing.JLabel();
+        lblImagenMontura = new javax.swing.JLabel();
         lblCiudad = new javax.swing.JLabel();
         lblCuerpo = new javax.swing.JLabel();
         lblArma = new javax.swing.JLabel();
         lblArmadura = new javax.swing.JLabel();
         lblMonturatxt = new javax.swing.JLabel();
+        lblImagenArma = new javax.swing.JLabel();
+        lblImagenArmadura = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -199,15 +201,22 @@ public class VistaWiki extends javax.swing.JFrame {
                             .addComponent(scrollCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMontura, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(77, 77, 77))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblImagenCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblImagenArma, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblImagenMontura, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblImagenArmadura, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImagenArma, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblCiudad)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -216,11 +225,8 @@ public class VistaWiki extends javax.swing.JFrame {
                         .addComponent(lblCuerpo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(scrollCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImagenCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(lblMontura, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -233,17 +239,25 @@ public class VistaWiki extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblMonturatxt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(scrollMontura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(scrollMontura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblImagenArmadura, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                            .addComponent(lblImagenMontura, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))))
                 .addGap(42, 42, 42)
-                .addComponent(btnVolver))
+                .addComponent(btnVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void ponerImagen(ImageIcon imgCuerpo, ImageIcon imgMontura) {
-        lblRaza.setIcon(imgCuerpo);
-        //lblMontura.setIcon(imgCuerpo);
+    public void ponerImagen(ImageIcon imgCuerpo, ImageIcon imgMontura, ImageIcon imgArma, ImageIcon imgArmadura) {
+        lblImagenCuerpo.setIcon(imgCuerpo);
+        lblImagenMontura.setIcon(imgMontura);
+        lblImagenArma.setIcon(imgArma);
+        lblImagenArmadura.setIcon(imgArmadura);
 
     }
 
@@ -285,9 +299,11 @@ public class VistaWiki extends javax.swing.JFrame {
     private javax.swing.JLabel lblArmadura;
     private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblCuerpo;
-    private javax.swing.JLabel lblMontura;
+    private javax.swing.JLabel lblImagenArma;
+    private javax.swing.JLabel lblImagenArmadura;
+    private javax.swing.JLabel lblImagenCuerpo;
+    private javax.swing.JLabel lblImagenMontura;
     private javax.swing.JLabel lblMonturatxt;
-    private javax.swing.JLabel lblRaza;
     private javax.swing.JScrollPane scrollArma;
     private javax.swing.JScrollPane scrollArmadura;
     private javax.swing.JScrollPane scrollCiudad;

@@ -34,6 +34,6 @@ public class MonturaElfo implements Montura {
         clase = "Elfos";
         descripcion = "La montura principal de los elfos son los leopardos de las nieves, los cuales"
                 + " refuerzan con armaduras magicas.";
-        //img = new ImageIcon(<inserte la ruta de la imagen>);
+        img = new ImageIcon("img/Monturas/MonturaElfo.png");
     }
 }

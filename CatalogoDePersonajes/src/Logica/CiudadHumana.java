@@ -43,7 +43,7 @@ public class CiudadHumana implements Ciudad{
                 + " para quienes los contemplan, esta construida sobre una gran planicie  "
                 + ", esto permite que la agricultura y el ganado sean una de sus mas poderosas"
                 + " fuentes de comercio.";  
-       img = ImageIO.read(new File("img/Meridian.png"));
+       img = ImageIO.read(new File("img/Ciudades/Meridian.png"));
     }
 
     

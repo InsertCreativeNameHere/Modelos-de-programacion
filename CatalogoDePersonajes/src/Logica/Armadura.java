@@ -5,6 +5,9 @@
  */
 package Logica;
 
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -12,4 +15,5 @@ package Logica;
 public interface Armadura {
     public String getDescripcion();
     public String getClase();
+    public ImageIcon getImg();
 }

@@ -5,6 +5,8 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
@@ -13,6 +15,7 @@ public class ArmaduraElfo implements Armadura {
 
     private String clase;
     private String descripcion;
+    private ImageIcon img;
 
     public String getClase() {
         return clase;
@@ -22,8 +25,14 @@ public class ArmaduraElfo implements Armadura {
         return descripcion;
     }
 
+    public ImageIcon getImg() {
+
+        return img;
+    }
+
     public ArmaduraElfo() {
         this.clase = "Elfos";
         this.descripcion = "Los elfos utilizan armaduras de cuero.";
+        img = new ImageIcon("img/Armaduras/ArmaduraElfo.png");
     }
 }

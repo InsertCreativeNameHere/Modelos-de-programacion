@@ -32,7 +32,7 @@ public class CuerpoHumano implements Cuerpo{
         descripcion = "Los humanos miden entre  1.60m y 1.70m aproximadamente"
                 + ", y pesan  entre 60kg y 70 kg, son de constitucion delgada, lo que "
                 + "les permite gran agilidad en batalla ";
-        img = new ImageIcon("img/Humano.png");
+        img = new ImageIcon("img/Cuerpos/Humano.png");
     }
     
     

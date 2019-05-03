@@ -5,14 +5,17 @@
  */
 package Logica;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author ldani
  */
 public class ArmaduraTrygve implements Armadura {
 
-   private String clase;
+    private String clase;
     private String descripcion;
+    private ImageIcon img;
 
     public String getClase() {
         return clase;
@@ -22,8 +25,14 @@ public class ArmaduraTrygve implements Armadura {
         return descripcion;
     }
 
+    public ImageIcon getImg() {
+
+        return img;
+    }
+
     public ArmaduraTrygve() {
         this.clase = "Trygves";
         this.descripcion = "Los Trygve no utilizan armadura";
+        img = new ImageIcon("img/Armaduras/ArmaduraTrygve.png");        
     }
 }

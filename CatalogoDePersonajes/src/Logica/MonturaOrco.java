@@ -27,6 +27,6 @@ public class MonturaOrco implements Montura {
     public MonturaOrco() {
         clase = "Orcos";
         descripcion = "La montura principal de los orcos son los rinocerontes de guerra";
-        //img = new ImageIcon(<inserte la ruta de la imagen>);
+        img = new ImageIcon("img/Monturas/MonturaOrco.png");
     }
 }

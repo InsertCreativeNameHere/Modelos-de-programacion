@@ -35,6 +35,6 @@ public class MonturaDoomSlayer implements Montura {
         clase = "DoomSlayers";
         descripcion = "Los DoomSlayers utilizan como montura los Cerberus"
                 + ", bestias caninas de tres cabezas.";
-        //img = new ImageIcon(<inserte la ruta de la imagen>);
+        img = new ImageIcon("img/Monturas/MonturaDoomSlayer.png");
     }
 }

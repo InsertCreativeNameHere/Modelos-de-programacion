@@ -28,23 +28,23 @@ public final class VistaMenu extends javax.swing.JFrame {
     }
 
     public void ponerBotonesImagen() throws IOException {
-        BufferedImage imgHumano = ImageIO.read(new File("img/HumanoBoton.png"));
+        BufferedImage imgHumano = ImageIO.read(new File("img/Botones/HumanoBoton.png"));
         Fondo fondoHumano = new Fondo(imgHumano);
         btnHumanos.setBorder(fondoHumano);
 
-        BufferedImage imgOrco = ImageIO.read(new File("img/OrcoBoton.png"));
+        BufferedImage imgOrco = ImageIO.read(new File("img/Botones/OrcoBoton.png"));
         Fondo fondoOrco = new Fondo(imgOrco);
         btnOrcos.setBorder(fondoOrco);
 
-        BufferedImage imgElfo = ImageIO.read(new File("img/ElfoBoton.png"));
+        BufferedImage imgElfo = ImageIO.read(new File("img/Botones/ElfoBoton.png"));
         Fondo fondoElfo = new Fondo(imgElfo);
         btnElfos.setBorder(fondoElfo);
 
-        BufferedImage imgDoom = ImageIO.read(new File("img/DoomSlayerBoton.png"));
+        BufferedImage imgDoom = ImageIO.read(new File("img/Botones/DoomSlayerBoton.png"));
         Fondo fondoDoom = new Fondo(imgDoom);
         btnDoomSlayers.setBorder(fondoDoom);
 
-        BufferedImage imgTrygve = ImageIO.read(new File("img/TrygveBoton.png"));
+        BufferedImage imgTrygve = ImageIO.read(new File("img/Botones/TrygveBoton.png"));
         Fondo fondoTrygve = new Fondo(imgTrygve);
         btnTrygves.setBorder(fondoTrygve);
 

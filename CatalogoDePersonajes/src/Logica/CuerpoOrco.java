@@ -35,6 +35,6 @@ public class CuerpoOrco implements Cuerpo {
         descripcion = "Los orcos son de constitucion fuerte, su piel dura les"
                 + " ofrece una enorme resistencia al daño fisico, miden entre 2.25m y 2.40m"
                 + " y pesan entre 100kg y 125kg aproximadamente.";
-        img = new ImageIcon("img/Orco.png");
+        img = new ImageIcon("img/Cuerpos/Orco.png");
     }
 }

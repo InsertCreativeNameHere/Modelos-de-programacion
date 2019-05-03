@@ -33,7 +33,7 @@ public class MonturaHumana implements Montura{
     public MonturaHumana() {
         clase = "Humanos";
         descripcion = "Los humanos utilizan como transporte principal animales del genero equino";
-        //img = new ImageIcon(<inserte la ruta de la imagen>);
+        img = new ImageIcon("img/Monturas/MonturaHumano.png");
     }
 
     

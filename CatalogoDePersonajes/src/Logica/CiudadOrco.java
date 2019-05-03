@@ -41,7 +41,7 @@ public class CiudadOrco implements Ciudad {
                 + " en un ambiente de constante guerra, y habitada por un enorme ejercito"
                 + " de salvajes guerreros Orcos, su principal fuente de comercio es la"
                 + " contratación de mercenarios.";   
-        img = ImageIO.read(new File("img/Rudania.png"));
+        img = ImageIO.read(new File("img/Ciudades/Rudania.png"));
     }
 
  

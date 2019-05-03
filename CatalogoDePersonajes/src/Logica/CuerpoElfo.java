@@ -34,6 +34,6 @@ public class CuerpoElfo implements Cuerpo {
         descripcion = "Los elfos miden entre 1,75m y 1.90m y pesan entre 50kg y 60kg, son de constitucion "
                 + " delgada y de fino semblante, desde que nacen tienen gran afinidad con la magia"
                 + " y los hechizos.";
-        img = new ImageIcon("img/Elfo.png");
+        img = new ImageIcon("img/Cuerpos/Elfo.png");
     }
 }
