@@ -18,7 +18,7 @@ class PoolDeCarta(object):
                 self.cartas[i].estado = False
                 break
         if o == None:
-            print("No hay nada gei")
+            print("No hay mas Kuriboh's")
         else:
             self.instancia = o
             return self.instancia
