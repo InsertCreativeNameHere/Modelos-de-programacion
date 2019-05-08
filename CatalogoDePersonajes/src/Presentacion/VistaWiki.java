@@ -1,6 +1,8 @@
 package Presentacion;
 
+import Logica.Director;
 import Logica.FabricaAbstracta;
+import Logica.Personaje;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -15,9 +17,11 @@ import javax.swing.JPanel;
 
 public class VistaWiki extends javax.swing.JFrame {
 
-    Clip musica;
+    private Clip musica;
+    private Personaje miPersonaje;
+    
 
-    public VistaWiki(FabricaAbstracta fabri) throws IOException, LineUnavailableException, UnsupportedAudioFileException, UnsupportedAudioFileException {
+    public VistaWiki(FabricaAbstracta fabri, Director di) throws IOException, LineUnavailableException, UnsupportedAudioFileException, UnsupportedAudioFileException {
         initComponents();
         this.ponerTransparencias();
         this.ponerFondo(fabri.getMiCiudad().getImg());
@@ -25,7 +29,7 @@ public class VistaWiki extends javax.swing.JFrame {
         this.ponerImagen(fabri.getMiCuerpo().getImg(), fabri.getMiMontura().getImg(), fabri.getMiArma().getImg(), fabri.getMiArmadura().getImg());
         this.AsignarFuente(fabri.getMiEscritura().getIdioma());
         this.ponerMusica(fabri.getMiMusica().getMusica());
-     
+        miPersonaje = darPersonaje(di);
     }
 
     public void ponerTransparencias() {
@@ -81,6 +85,9 @@ public class VistaWiki extends javax.swing.JFrame {
         panel.setBorder(mifondo);
     }
 
+    
+    
+    
     public void ponerTexto(FabricaAbstracta fabrica) {
         txtAreaCiudad.setText(fabrica.getMiCiudad().getDescripcion());
         txtAreaCiudad.setLineWrap(true);
@@ -128,6 +135,7 @@ public class VistaWiki extends javax.swing.JFrame {
         lblMonturatxt = new javax.swing.JLabel();
         lblImagenArma = new javax.swing.JLabel();
         lblImagenArmadura = new javax.swing.JLabel();
+        btnSeleccionarRaza = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -175,13 +183,23 @@ public class VistaWiki extends javax.swing.JFrame {
         lblMonturatxt.setFont(new java.awt.Font("Trajan Pro", 1, 14)); // NOI18N
         lblMonturatxt.setText("Montura");
 
+        btnSeleccionarRaza.setText("Seleccionar Raza");
+        btnSeleccionarRaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarRazaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVolver)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVolver)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSeleccionarRaza))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +264,9 @@ public class VistaWiki extends javax.swing.JFrame {
                             .addComponent(lblImagenArmadura, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                             .addComponent(lblImagenMontura, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))))
                 .addGap(42, 42, 42)
-                .addComponent(btnVolver)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVolver)
+                    .addComponent(btnSeleccionarRaza))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -291,9 +311,24 @@ public class VistaWiki extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnVolverActionPerformed
+ 
+    public Personaje darPersonaje(Director miDiri){
+        miDiri.construirPersonaje();
+        return miDiri.obtenerPersonaje();
+    }
+    
+    private void btnSeleccionarRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarRazaActionPerformed
+
+        musica.stop();
+        musica.close();
+        VistaJuego v = new VistaJuego(miPersonaje);
+        v.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSeleccionarRazaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSeleccionarRaza;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel lblArma;
     private javax.swing.JLabel lblArmadura;

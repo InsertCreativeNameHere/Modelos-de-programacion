@@ -1,5 +1,12 @@
 package Presentacion;
 
+import Logica.Constructor;
+import Logica.ConstructorDoomSlayers;
+import Logica.ConstructorElfos;
+import Logica.ConstructorHumanos;
+import Logica.ConstructorOrcos;
+import Logica.ConstructorTrygves;
+import Logica.Director;
 import Logica.FabricaAbstracta;
 import Logica.FabricaDoomSlayer;
 import Logica.FabricaElfo;
@@ -19,6 +26,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 public final class VistaMenu extends javax.swing.JFrame {
 
     FabricaAbstracta miFabrica;
+    private Director miDirector;
+    private Constructor miConstructor;
 
     public VistaMenu() throws IOException, LineUnavailableException, UnsupportedAudioFileException {
         initComponents();
@@ -135,6 +144,8 @@ public final class VistaMenu extends javax.swing.JFrame {
 
         try {
             miFabrica = new FabricaHumano();
+            miConstructor = new ConstructorHumanos();
+            miDirector = new Director(miConstructor);
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -143,7 +154,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica);
+            v = new VistaWiki(miFabrica,miDirector);
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -154,13 +165,13 @@ public final class VistaMenu extends javax.swing.JFrame {
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }//GEN-LAST:event_btnHumanosActionPerformed
 
     private void btnElfosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElfosActionPerformed
         try {
             miFabrica = new FabricaElfo();
+            miConstructor = new ConstructorElfos();
+            miDirector = new Director(miConstructor);
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -169,7 +180,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica);
+            v = new VistaWiki(miFabrica, miDirector);
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -185,6 +196,8 @@ public final class VistaMenu extends javax.swing.JFrame {
     private void btnDoomSlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoomSlayersActionPerformed
         try {
             miFabrica = new FabricaDoomSlayer();
+            miConstructor = new ConstructorDoomSlayers();
+            miDirector = new Director(miConstructor);
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -193,7 +206,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica);
+            v = new VistaWiki(miFabrica,miDirector);
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -208,7 +221,9 @@ public final class VistaMenu extends javax.swing.JFrame {
 
     private void btnTrygvesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrygvesActionPerformed
         try {
-            miFabrica = new FabricaTrygve();
+             miFabrica = new FabricaTrygve();
+            miConstructor = new ConstructorTrygves();
+            miDirector = new Director(miConstructor);
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -217,7 +232,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica);
+            v = new VistaWiki(miFabrica,miDirector);
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -233,6 +248,8 @@ public final class VistaMenu extends javax.swing.JFrame {
     private void btnOrcosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrcosActionPerformed
         try {
             miFabrica = new FabricaOrco();
+            miConstructor = new ConstructorOrcos();
+            miDirector = new Director(miConstructor);
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -241,7 +258,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica);
+            v = new VistaWiki(miFabrica,miDirector);
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 

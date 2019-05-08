@@ -16,6 +16,7 @@ public class CuerpoDoomSlayer implements Cuerpo {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -29,12 +30,19 @@ public class CuerpoDoomSlayer implements Cuerpo {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public CuerpoDoomSlayer() {
         clase = "DoomSlayers";
         descripcion = "Los DoomSlayer miden entre 2.20m y 2.35m, son de constitucion extremadamente"
                 + " fuerte y resistente, la mayoria de ellos llevan uno de sus brazos con intensas quemaduras"
                 + ", esto como simbolo de su poder.";
         img = new ImageIcon("img/Cuerpos/DoomSlayer.png");
+        sprite = new ImageIcon("Sprites/DoomSlayers/DLL.gif");
     }
     
 }

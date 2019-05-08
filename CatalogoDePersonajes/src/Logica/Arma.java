@@ -16,4 +16,5 @@ public interface Arma {
     public String getDescripcion();
     public String getClase();
     public ImageIcon getImg();
+    public ImageIcon getSprite();
 }

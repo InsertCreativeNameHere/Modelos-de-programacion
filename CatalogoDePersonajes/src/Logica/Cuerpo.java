@@ -15,4 +15,5 @@ public interface Cuerpo {
     public String getDescripcion();
     public String getClase();
     public ImageIcon getImg();
+    public ImageIcon getSprite();
 }

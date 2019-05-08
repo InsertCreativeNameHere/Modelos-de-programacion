@@ -16,6 +16,7 @@ public class ArmaDoomSlayer implements Arma {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -28,10 +29,17 @@ public class ArmaDoomSlayer implements Arma {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public ArmaDoomSlayer() {
         this.clase = "DoomSlayers";
         this.descripcion = "El arma principal de los DoomSlayer es el cañon de Gauss, un tipo de cañon "
                 + "que utiliza un acelerador de energia infernal para disparar proyectiles a grandes velocidades.";                
         img = new ImageIcon("img/Armas/ArmaDoomSlayer.png");
+        sprite = new ImageIcon("Sprites/DoomSlayers/DC.gif");
     }
 }

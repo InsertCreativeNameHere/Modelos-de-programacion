@@ -16,6 +16,7 @@ public class ArmaduraElfo implements Armadura {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -30,9 +31,16 @@ public class ArmaduraElfo implements Armadura {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public ArmaduraElfo() {
         this.clase = "Elfos";
         this.descripcion = "Los elfos utilizan armaduras de cuero.";
         img = new ImageIcon("img/Armaduras/ArmaduraElfo.png");
+        sprite = new ImageIcon("direccion aqui");
     }
 }

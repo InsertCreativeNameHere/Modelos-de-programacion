@@ -16,6 +16,7 @@ public class ArmaduraHumana implements Armadura {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -30,10 +31,17 @@ public class ArmaduraHumana implements Armadura {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public ArmaduraHumana() {
         this.clase = "Humanos";
         this.descripcion = "Los humanos utilizan ligeras armaduras principalmente hechas de tela y aleaciones de metal";
         img = new ImageIcon("img/Armaduras/ArmaduraHumano.png");
+        sprite = new ImageIcon("direccion aqui");
     }
 
 }

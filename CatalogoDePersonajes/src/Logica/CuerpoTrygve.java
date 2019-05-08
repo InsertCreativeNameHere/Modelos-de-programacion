@@ -13,9 +13,10 @@ import javax.swing.ImageIcon;
  */
 public class CuerpoTrygve implements Cuerpo {
 
-   private String clase;
+    private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -29,11 +30,18 @@ public class CuerpoTrygve implements Cuerpo {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public CuerpoTrygve() {
         clase = "Trygves";
         descripcion ="Los Trygve son seres elementales con forma humanoide, miden entre 1.40m y 1.50m"
                 + " y su cuerpo es energia pura";
         img = new ImageIcon("img/Cuerpos/Trygve.png");
+        sprite = new ImageIcon("Sprites/Trygves/Standby.gif");
     }
     
 }

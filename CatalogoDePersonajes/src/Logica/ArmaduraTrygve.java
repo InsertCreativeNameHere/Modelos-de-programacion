@@ -16,6 +16,7 @@ public class ArmaduraTrygve implements Armadura {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -30,9 +31,14 @@ public class ArmaduraTrygve implements Armadura {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+
     public ArmaduraTrygve() {
         this.clase = "Trygves";
         this.descripcion = "Los Trygve no utilizan armadura";
-        img = new ImageIcon("img/Armaduras/ArmaduraTrygve.png");        
+        img = new ImageIcon("img/Armaduras/ArmaduraTrygve.png");  
+        sprite = new ImageIcon("direccion aqui");
     }
 }

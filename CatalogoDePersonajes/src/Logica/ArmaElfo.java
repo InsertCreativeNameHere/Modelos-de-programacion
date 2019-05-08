@@ -16,6 +16,7 @@ public class ArmaElfo implements Arma {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
     
     public String getClase() {
         return clase;
@@ -28,6 +29,10 @@ public class ArmaElfo implements Arma {
         
         return img;
     }
+    
+    public ImageIcon getSprite() {
+        return sprite;
+    }
 
     public ArmaElfo() {
         this.clase = "Elfos";
@@ -35,6 +40,8 @@ public class ArmaElfo implements Arma {
                 + "y en algunos casos arcos de hilo magico, lo que les permite disparar "
                 + "flechas de luz muy efectivas contra la magia oscura ";
         img = new ImageIcon("img/Armas/ArmaElfo.png");
+        sprite = new ImageIcon("Sprites/Elfos/EC.gif");
     }
+
 
 }

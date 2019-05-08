@@ -16,6 +16,7 @@ public class ArmaduraDoomSlayer implements Armadura {
     private String clase;
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -29,10 +30,17 @@ public class ArmaduraDoomSlayer implements Armadura {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public ArmaduraDoomSlayer() {
         this.clase = "DoomSlayers";
         this.descripcion = "Los DoomSlayers utilizan armaduras hechas con aleaciones "
                 + " de acero pesado, aunque esto no les detiene de moverse con agilidad.";
         img = new ImageIcon("img/Armaduras/ArmaduraDoomSlayer.png");
+        sprite = new ImageIcon("direccion aqui");
     }
 }

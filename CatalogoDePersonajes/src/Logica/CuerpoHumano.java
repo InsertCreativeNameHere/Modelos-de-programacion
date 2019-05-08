@@ -12,6 +12,7 @@ public class CuerpoHumano implements Cuerpo{
     private String clase; 
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
 
     public String getClase() {
         return clase;
@@ -24,6 +25,10 @@ public class CuerpoHumano implements Cuerpo{
     public ImageIcon getImg() {
         return img;
     }
+
+    public ImageIcon getSprite() {
+        return sprite;
+    }
     
     
 
@@ -33,6 +38,7 @@ public class CuerpoHumano implements Cuerpo{
                 + ", y pesan  entre 60kg y 70 kg, son de constitucion delgada, lo que "
                 + "les permite gran agilidad en batalla ";
         img = new ImageIcon("img/Cuerpos/Humano.png");
+        sprite = new ImageIcon("Sprites/Humanos/HLL.gif");
     }
     
     

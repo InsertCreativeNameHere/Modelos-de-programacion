@@ -15,6 +15,8 @@ public class ArmaHumana implements Arma {
     private String clase; 
     private String descripcion;
     private ImageIcon img;
+    private ImageIcon sprite;
+    
     public String getClase() {
         return clase;
     }
@@ -26,11 +28,18 @@ public class ArmaHumana implements Arma {
         return img;
     }
 
+    public ImageIcon getSprite() {
+        return sprite;
+    }
+    
+    
+
     public ArmaHumana() {
         this.clase = "Humanos";
         this.descripcion = "Los humanos utilizan katanas y arcos"
                 + ". Las katanas están hechas de colmillo de revenant (lobo salvaje de pradera) ";
         img = new ImageIcon("img/Armas/ArmaHumano.png");
+        sprite = new ImageIcon("Sprites/Humanos/HC.gif");
     }
 
     
