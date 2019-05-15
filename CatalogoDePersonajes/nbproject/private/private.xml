@@ -2,37 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaduraTrygve.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaTrygve.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ConstructorDoomSlayers.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Director.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaElfo.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaOrco.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaDoomSlayer.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/CuerpoDoomSlayer.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/FabricaHumano.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Arma.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Presentacion/VistaJuego.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/CuerpoElfo.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/CuerpoOrco.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Presentacion/VistaWiki.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/CuerpoHumano.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/CuerpoTrygve.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaduraDoomSlayer.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ConstructorElfos.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaduraOrco.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaHumana.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaduraElfo.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Constructor.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ConstructorHumanos.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ConstructorTrygves.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ConstructorOrcos.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Presentacion/VistaMenu.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Armadura.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Personaje.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/Cuerpo.java</file>
-            <file>file:/F:/Documentos/Daniel/Documentos%20U/Cuarto%20semestre/Modelos%20de%20Programacion%201/CatalogoDePersonajes/src/Logica/ArmaduraHumana.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

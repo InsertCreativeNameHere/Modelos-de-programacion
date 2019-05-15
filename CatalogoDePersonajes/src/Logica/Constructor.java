@@ -11,11 +11,11 @@ package Logica;
  */
 public abstract class Constructor {
     
-    protected Personaje instancia;
+    protected PersonajeNativo instancia;
     
     public abstract void crearInstancia();
 
-    public Personaje getInstancia() {
+    public PersonajeNativo getInstancia() {
         return instancia;
     }
   

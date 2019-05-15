@@ -42,6 +42,6 @@ public class ConstructorDoomSlayers extends Constructor {
 
 
     public void crearInstancia() {
-        instancia = new Personaje(2000);
+        instancia = new PersonajeNativo(2000);
     }
 }

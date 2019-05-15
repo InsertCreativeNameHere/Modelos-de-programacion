@@ -1,7 +1,7 @@
 
 package Presentacion;
 
-import Logica.Personaje;
+import Logica.PersonajeNativo;
 import com.sun.java.swing.plaf.motif.MotifTreeCellRenderer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,11 +18,11 @@ import javax.swing.Timer;
 public class VistaJuego extends javax.swing.JFrame implements Runnable{
 
     
-    Personaje miPersonaje;
+    PersonajeNativo miPersonaje;
     int contador;
     Thread hilo;
     
-    public VistaJuego(Personaje perso) {
+    public VistaJuego(PersonajeNativo perso) {
        
         initComponents();
         miPersonaje = perso;

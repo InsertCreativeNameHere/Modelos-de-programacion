@@ -43,6 +43,6 @@ public class ConstructorHumanos extends Constructor{
     }
     
     public void crearInstancia() {
-        instancia = new Personaje(1500);
+        instancia = new PersonajeNativo(1500);
     }
 }

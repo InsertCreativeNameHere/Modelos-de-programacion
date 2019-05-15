@@ -25,7 +25,7 @@ public class Director {
         this.esclavito.crearMontura();
     }
     
-    public Personaje obtenerPersonaje(){
+    public PersonajeNativo obtenerPersonaje(){
         return this.esclavito.getInstancia();
     }
     

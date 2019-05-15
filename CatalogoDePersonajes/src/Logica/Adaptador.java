@@ -9,8 +9,11 @@ package Logica;
  *
  * @author ldani
  */
-public interface Personaje {
-    
-    public abstract void Atacar();
+public class Adaptador implements Personaje{
+
+    @Override
+    public void Atacar() {
+        System.out.println("ataque pinche extranjero");
+    }
     
 }

@@ -40,6 +40,6 @@ public class ConstructorOrcos extends Constructor {
         this.instancia.setMiMontura(miFabrica.getMiMontura());
     }
     public void crearInstancia() {
-        instancia = new Personaje(2100);
+        instancia = new PersonajeNativo(2100);
     }
 }

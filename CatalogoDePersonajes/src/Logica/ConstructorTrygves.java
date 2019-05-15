@@ -40,6 +40,6 @@ public class ConstructorTrygves extends Constructor {
         this.instancia.setMiMontura(miFabrica.getMiMontura());
     }
     public void crearInstancia() {
-        instancia = new Personaje(2000);
+        instancia = new PersonajeNativo(2000);
     }
 }

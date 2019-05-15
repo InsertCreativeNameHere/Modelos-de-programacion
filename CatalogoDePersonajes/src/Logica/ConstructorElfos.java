@@ -41,6 +41,6 @@ public class ConstructorElfos extends Constructor {
     }
     
     public void crearInstancia() {
-        instancia = new Personaje(1600);
+        instancia = new PersonajeNativo(1600);
     }
 }

@@ -2,7 +2,7 @@ package Presentacion;
 
 import Logica.Director;
 import Logica.FabricaAbstracta;
-import Logica.Personaje;
+import Logica.PersonajeNativo;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class VistaWiki extends javax.swing.JFrame {
 
     private Clip musica;
-    private Personaje miPersonaje;
+    private PersonajeNativo miPersonaje;
     
 
     public VistaWiki(FabricaAbstracta fabri, Director di) throws IOException, LineUnavailableException, UnsupportedAudioFileException, UnsupportedAudioFileException {
@@ -312,7 +312,7 @@ public class VistaWiki extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnVolverActionPerformed
  
-    public Personaje darPersonaje(Director miDiri){
+    public PersonajeNativo darPersonaje(Director miDiri){
         miDiri.construirPersonaje();
         return miDiri.obtenerPersonaje();
     }
