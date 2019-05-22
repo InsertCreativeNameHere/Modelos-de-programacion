@@ -73,7 +73,7 @@ public class DecoradorLetra extends Decorador{
     @Override
     public BufferedImage getmiCiudadImg() {
         return getMiInstancia().getmiCiudadImg();
-    }
+    }   
 
     @Override
     public Clip getmiMusica() {
@@ -87,7 +87,7 @@ public class DecoradorLetra extends Decorador{
 
     @Override
     public int getmiArmadura() {
-        return getMiInstancia().getmiArmadura() - 50;
+        return getMiInstancia().getmiArmadura() + 20;
     }
 
     @Override

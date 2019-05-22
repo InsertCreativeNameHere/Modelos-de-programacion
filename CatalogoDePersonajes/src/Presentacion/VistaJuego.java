@@ -5,6 +5,7 @@ import Logica.Constructores.Personaje;
 import Logica.Constructores.PersonajeNativo;
 import Logica.Decorador.DecoradorLetra;
 import com.sun.java.swing.plaf.motif.MotifTreeCellRenderer;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class VistaJuego extends javax.swing.JFrame implements Runnable {
@@ -26,10 +28,14 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
     Personaje personajeEjemplo;
     int contador;
     Thread hilo;
+    private int cont=0;
 
     public VistaJuego(Personaje perso) {
         initComponents();
         int mitadh = (int) (this.getSize().height / 2);
+        lblImagenLlama.setLocation(mitadh,10);
+        getContentPane().setComponentZOrder(lblImagenLlama, 0);       
+        getContentPane().setComponentZOrder(lblPersonaje2, 1);
         this.setLocationRelativeTo(null);
         miPersonaje = new PersonajeNativo(1000);
         if (perso.getClass() == miPersonaje.getClass()) {
@@ -47,7 +53,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
         lblDaño.setText(String.valueOf(personajeEjemplo.getmiDaño()));
         lblVida.setText(String.valueOf(personajeEjemplo.getmiVida()));
         lblArmadura.setText(String.valueOf(personajeEjemplo.getmiArmadura()));
-        lblVelocidad.setText(String.valueOf(personajeEjemplo.getmiVelocidad())); 
+        lblVelocidad.setText(String.valueOf(personajeEjemplo.getmiVelocidad()));
     }
 
     public void cambiarSprite() {
@@ -66,6 +72,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
 
         btnVolver = new javax.swing.JButton();
         btnAtacar = new javax.swing.JButton();
+        lblImagenLlama = new javax.swing.JLabel();
         lblPersonaje2 = new javax.swing.JLabel();
         lblVida = new javax.swing.JLabel();
         lblDaño = new javax.swing.JLabel();
@@ -79,6 +86,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +94,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
                 btnVolverActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 284, -1, -1));
 
         btnAtacar.setText("Atacar");
         btnAtacar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,22 +102,33 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
                 btnAtacarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+        getContentPane().add(lblImagenLlama, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 200, 200));
+        getContentPane().add(lblPersonaje2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 292, 278));
 
         lblVida.setText("Vida");
+        getContentPane().add(lblVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, -1, -1));
 
         lblDaño.setText("Daño");
+        getContentPane().add(lblDaño, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
 
         lblArmadura.setText("Armadura");
+        getContentPane().add(lblArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, -1, -1));
 
         lblVelocidad.setText("Velocidad");
+        getContentPane().add(lblVelocidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, -1, -1));
 
         jLabel1.setText("Vida:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
 
         jLabel2.setText("Daño:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
 
         jLabel3.setText("Armadura:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, -1, -1));
 
         jLabel4.setText("Velocidad: ");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
         btnAddDecorador.setText("Agregar decorador");
         btnAddDecorador.addActionListener(new java.awt.event.ActionListener() {
@@ -116,69 +136,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
                 btnAddDecoradorActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(lblPersonaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btnVolver)))
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAtacar)
-                    .addComponent(btnAddDecorador))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblVelocidad)
-                    .addComponent(lblArmadura)
-                    .addComponent(lblDaño)
-                    .addComponent(lblVida))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lblPersonaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnVolver)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblVida)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDaño)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblArmadura)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblVelocidad)
-                            .addComponent(jLabel4)))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(btnAtacar)
-                .addGap(16, 16, 16)
-                .addComponent(btnAddDecorador))
-        );
+        getContentPane().add(btnAddDecorador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,21 +144,21 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
 
         presionarBotonAtacar(personajeEjemplo);
-        
+
     }//GEN-LAST:event_btnAtacarActionPerformed
 
-    public void presionarBotonAtacar(Personaje miPerso){
+    public void presionarBotonAtacar(Personaje miPerso) {
         if (miPerso.getClass() == miPersonaje.getClass()) {
             miPersonaje.Atacar();
             lblPersonaje2.setIcon(miPersonaje.getSpriteActivo());
             hilo = new Thread(this, "hilo");
             hilo.start();
-        }else{
+        } else {
             miPerso.Atacar();
-        }     
+        }
     }
-    
-    
+
+
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         this.dispose();
         try {
@@ -216,14 +174,25 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnAddDecoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDecoradorActionPerformed
-
+        if(cont <=20){
         personajeEjemplo = new DecoradorLetra(personajeEjemplo);
         lblDaño.setText(String.valueOf(personajeEjemplo.getmiDaño()));
         lblVida.setText(String.valueOf(personajeEjemplo.getmiVida()));
         lblArmadura.setText(String.valueOf(personajeEjemplo.getmiArmadura()));
         lblVelocidad.setText(String.valueOf(personajeEjemplo.getmiVelocidad()));
+        lblImagenLlama.setSize(10*cont, 10*cont);
+        cont++;
+        ImageIcon imagen;
+        imagen = new ImageIcon("img/Poder.png");
+        imagen = new ImageIcon(imagen.getImage().getScaledInstance(10*cont, 10*cont, Image.SCALE_DEFAULT));
+        lblImagenLlama.setIcon(imagen);              
+        }else{
+            JOptionPane.showMessageDialog(null, "Su poder no puede aumentar mas");
+        }
+       
+        
     }//GEN-LAST:event_btnAddDecoradorActionPerformed
-  
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDecorador;
@@ -235,6 +204,7 @@ public class VistaJuego extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblArmadura;
     private javax.swing.JLabel lblDaño;
+    private javax.swing.JLabel lblImagenLlama;
     private javax.swing.JLabel lblPersonaje2;
     private javax.swing.JLabel lblVelocidad;
     private javax.swing.JLabel lblVida;
