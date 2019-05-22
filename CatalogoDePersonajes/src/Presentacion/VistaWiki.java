@@ -1,8 +1,10 @@
 package Presentacion;
 
-import Logica.Director;
-import Logica.FabricaAbstracta;
-import Logica.PersonajeNativo;
+import Logica.Adaptadores.Adaptador;
+import Logica.Constructores.Director;
+import Logica.Constructores.Personaje;
+import Logica.Fabricas.FabricaAbstracta;
+import Logica.Constructores.PersonajeNativo;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -18,9 +20,9 @@ import javax.swing.JPanel;
 public class VistaWiki extends javax.swing.JFrame {
 
     private Clip musica;
-    private PersonajeNativo miPersonaje;
+    private Personaje miPersonaje;
     
-
+/*
     public VistaWiki(FabricaAbstracta fabri, Director di) throws IOException, LineUnavailableException, UnsupportedAudioFileException, UnsupportedAudioFileException {
         initComponents();
         this.ponerTransparencias();
@@ -29,9 +31,18 @@ public class VistaWiki extends javax.swing.JFrame {
         this.ponerImagen(fabri.getMiCuerpo().getImg(), fabri.getMiMontura().getImg(), fabri.getMiArma().getImg(), fabri.getMiArmadura().getImg());
         this.AsignarFuente(fabri.getMiEscritura().getIdioma());
         this.ponerMusica(fabri.getMiMusica().getMusica());
-        miPersonaje = darPersonaje(di);
-    }
+    }*/
 
+
+    VistaWiki(Personaje p) throws IOException, LineUnavailableException, UnsupportedAudioFileException, UnsupportedAudioFileException{
+        initComponents();
+        miPersonaje = p;
+        this.ponerTransparencias();
+        this.ponerFondo(p.getmiCiudadImg());
+        this.ponerTexto(p);
+        this.ponerImagen(p.getmiCuerpoImg(), p.getmiMonturaImg(), p.getmiArmaImg(), p.getmiArmaduraImg());
+        this.ponerMusica(p.getmiMusica());
+    }
     public void ponerTransparencias() {
         txtAreaCiudad.setForeground(Color.white);
         scrollCiudad.setOpaque(false);
@@ -106,6 +117,29 @@ public class VistaWiki extends javax.swing.JFrame {
         txtAreaArmadura.setEditable(false);
 
         txtAreaMontura.setText(fabrica.getMiMontura().getDescripcion());
+        txtAreaMontura.setLineWrap(true);
+        txtAreaMontura.setEditable(false);
+
+    }
+    
+     public void ponerTexto(Personaje p) {
+        txtAreaCiudad.setText(p.getMiCiudadDesc());
+        txtAreaCiudad.setLineWrap(true);
+        txtAreaCiudad.setEditable(false);
+
+        txtAreaCuerpo.setText(p.getMiCuerpoDesc());
+        txtAreaCuerpo.setLineWrap(true);
+        txtAreaCuerpo.setEditable(false);
+
+        txtAreaArma.setText(p.getMiArmaDesc());
+        txtAreaArma.setLineWrap(true);
+        txtAreaArma.setEditable(false);
+
+        txtAreaArmadura.setText(p.getMiArmaduraDesc());
+        txtAreaArmadura.setLineWrap(true);
+        txtAreaArmadura.setEditable(false);
+
+        txtAreaMontura.setText(p.getMiMonturaDesc());
         txtAreaMontura.setLineWrap(true);
         txtAreaMontura.setEditable(false);
 
@@ -312,9 +346,8 @@ public class VistaWiki extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnVolverActionPerformed
  
-    public PersonajeNativo darPersonaje(Director miDiri){
-        miDiri.construirPersonaje();
-        return miDiri.obtenerPersonaje();
+    public Personaje darPersonaje(){
+        return miPersonaje;
     }
     
     private void btnSeleccionarRazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarRazaActionPerformed

@@ -1,18 +1,20 @@
 package Presentacion;
 
-import Logica.Constructor;
-import Logica.ConstructorDoomSlayers;
-import Logica.ConstructorElfos;
-import Logica.ConstructorHumanos;
-import Logica.ConstructorOrcos;
-import Logica.ConstructorTrygves;
-import Logica.Director;
-import Logica.FabricaAbstracta;
-import Logica.FabricaDoomSlayer;
-import Logica.FabricaElfo;
-import Logica.FabricaHumano;
-import Logica.FabricaOrco;
-import Logica.FabricaTrygve;
+import Logica.Adaptadores.Adaptador;
+import Logica.Constructores.Constructor;
+import Logica.Constructores.ConstructorDoomSlayers;
+import Logica.Constructores.ConstructorElfos;
+import Logica.Constructores.ConstructorHumanos;
+import Logica.Constructores.ConstructorOrcos;
+import Logica.Constructores.ConstructorTrygves;
+import Logica.Constructores.Director;
+import Logica.Fabricas.FabricaAbstracta;
+import Logica.Fabricas.FabricaDoomSlayer;
+import Logica.Fabricas.FabricaElfo;
+import Logica.Fabricas.FabricaHumano;
+import Logica.Fabricas.FabricaOrco;
+import Logica.Fabricas.FabricaTrygve;
+import Logica.Constructores.Personaje;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -55,8 +57,12 @@ public final class VistaMenu extends javax.swing.JFrame {
 
         BufferedImage imgTrygve = ImageIO.read(new File("img/Botones/TrygveBoton.png"));
         Fondo fondoTrygve = new Fondo(imgTrygve);
-        btnTrygves.setBorder(fondoTrygve);
-
+        btnTrygves1.setBorder(fondoTrygve);
+        
+        BufferedImage imgEnano = ImageIO.read(new File("img/Botones/EnanoBoton.jpg"));
+        Fondo fondoEnano = new Fondo(imgEnano);
+        btnEnano.setBorder(fondoEnano);
+        
     }
 
     public void AnimarFondo() {
@@ -71,9 +77,10 @@ public final class VistaMenu extends javax.swing.JFrame {
         btnHumanos = new javax.swing.JButton();
         btnElfos = new javax.swing.JButton();
         btnDoomSlayers = new javax.swing.JButton();
-        btnTrygves = new javax.swing.JButton();
         btnOrcos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnTrygves1 = new javax.swing.JButton();
+        btnEnano = new javax.swing.JButton();
         lblmenu = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
@@ -105,14 +112,6 @@ public final class VistaMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnDoomSlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 68, 166, 275));
 
-        btnTrygves.setText("Trygves");
-        btnTrygves.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTrygvesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnTrygves, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 68, 166, 275));
-
         btnOrcos.setText("Orcos");
         btnOrcos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,11 +130,27 @@ public final class VistaMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 79, 39));
 
+        btnTrygves1.setText("Trygves");
+        btnTrygves1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrygves1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTrygves1, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 68, 166, 275));
+
+        btnEnano.setText("Enano");
+        btnEnano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnanoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEnano, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 70, 160, 270));
+
         lblmenu.setFont(new java.awt.Font("Trajan Pro", 1, 18)); // NOI18N
         lblmenu.setForeground(new java.awt.Color(183, 10, 10));
         lblmenu.setText("Elija su raza");
-        getContentPane().add(lblmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 420));
+        getContentPane().add(lblmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, -1));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,6 +161,7 @@ public final class VistaMenu extends javax.swing.JFrame {
             miFabrica = new FabricaHumano();
             miConstructor = new ConstructorHumanos();
             miDirector = new Director(miConstructor);
+            miDirector.construirPersonaje();
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -154,7 +170,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica,miDirector);
+            v = new VistaWiki(miDirector.obtenerPersonaje());
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -172,84 +188,50 @@ public final class VistaMenu extends javax.swing.JFrame {
             miFabrica = new FabricaElfo();
             miConstructor = new ConstructorElfos();
             miDirector = new Director(miConstructor);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
+            miDirector.construirPersonaje();
+        } catch (UnsupportedAudioFileException | LineUnavailableException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica, miDirector);
+            v = new VistaWiki(miDirector.obtenerPersonaje());
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
-        } catch (IOException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedAudioFileException ex) {
+        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnElfosActionPerformed
 
     private void btnDoomSlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoomSlayersActionPerformed
+
         try {
             miFabrica = new FabricaDoomSlayer();
             miConstructor = new ConstructorDoomSlayers();
             miDirector = new Director(miConstructor);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
+            miDirector.construirPersonaje();
+        } catch (UnsupportedAudioFileException | LineUnavailableException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica,miDirector);
+            v = new VistaWiki(miDirector.obtenerPersonaje());
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
-        } catch (IOException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedAudioFileException ex) {
+        } catch (LineUnavailableException | UnsupportedAudioFileException | IOException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnDoomSlayersActionPerformed
-
-    private void btnTrygvesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrygvesActionPerformed
-        try {
-             miFabrica = new FabricaTrygve();
-            miConstructor = new ConstructorTrygves();
-            miDirector = new Director(miConstructor);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
-        VistaWiki v;
-        try {
-            v = new VistaWiki(miFabrica,miDirector);
-            v.setVisible(true);
-            v.setLocationRelativeTo(null);
-
-        } catch (IOException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnTrygvesActionPerformed
 
     private void btnOrcosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrcosActionPerformed
         try {
             miFabrica = new FabricaOrco();
             miConstructor = new ConstructorOrcos();
             miDirector = new Director(miConstructor);
+            miDirector.construirPersonaje();
         } catch (UnsupportedAudioFileException ex) {
             Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (LineUnavailableException ex) {
@@ -258,7 +240,7 @@ public final class VistaMenu extends javax.swing.JFrame {
         this.setVisible(false);
         VistaWiki v;
         try {
-            v = new VistaWiki(miFabrica,miDirector);
+            v = new VistaWiki(miDirector.obtenerPersonaje());
             v.setVisible(true);
             v.setLocationRelativeTo(null);
 
@@ -274,6 +256,51 @@ public final class VistaMenu extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnTrygves1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrygves1ActionPerformed
+        try {
+            miFabrica = new FabricaTrygve();
+            miConstructor = new ConstructorTrygves();
+            miDirector = new Director(miConstructor);
+            miDirector.construirPersonaje();
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        VistaWiki v;
+        try {
+            v = new VistaWiki(miDirector.obtenerPersonaje());
+            v.setVisible(true);
+            v.setLocationRelativeTo(null);
+
+        } catch (IOException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnTrygves1ActionPerformed
+
+    private void btnEnanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnanoActionPerformed
+        Personaje p = new Adaptador();
+        this.setVisible(false);
+        VistaWiki v;
+        try {
+            v = new VistaWiki(p);
+            v.setVisible(true);
+            v.setLocationRelativeTo(null);
+
+        } catch (IOException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(VistaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnEnanoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -319,10 +346,11 @@ public final class VistaMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDoomSlayers;
     private javax.swing.JButton btnElfos;
+    private javax.swing.JButton btnEnano;
     private javax.swing.JButton btnHumanos;
     private javax.swing.JButton btnOrcos;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnTrygves;
+    private javax.swing.JButton btnTrygves1;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblmenu;
     // End of variables declaration//GEN-END:variables
