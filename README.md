@@ -1,5 +1,8 @@
 # Modelos-de-programacion
 
+Integrantes:- Javier Andres Aponte (20172020036)
+            - Luis Daniel Hormiga (20172020026)
+
 La siguiente es la implementecion de varios patrones de diseño en un solo programa. Para poder ver dicha implementacion se debe:
 
 # · Catalogo de personajes (Abstract factory):
