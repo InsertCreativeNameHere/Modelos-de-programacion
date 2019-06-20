@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interpreter;
-
+package interpreterpost;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,14 +11,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
- * @author estudiantes
+ * @author javie
  */
-public class Interpreter {
+public class InterpreterPost {
 
-    public static String leerArchivo() throws FileNotFoundException, IOException {
+   public static String leerArchivo() throws FileNotFoundException, IOException {
         File archivito = new File("archivito.ini");
         FileReader fr = new FileReader(archivito);
         BufferedReader br = new BufferedReader(fr);
@@ -40,24 +38,28 @@ public class Interpreter {
                 case "+":
                     z = new ExpresionSuma();
                     z.setNumero1(x);
+                    y.setValor(String.valueOf(arreglo[i+1]));
                     z.setNumero2(y);
                     x.setValor(String.valueOf(z.intepretar()));
                     break;
                 case "-":
                     z = new ExpresionDiferencia();
                     z.setNumero1(x);
+                    y.setValor(String.valueOf(arreglo[i+1]));
                     z.setNumero2(y);
                     x.setValor(String.valueOf(z.intepretar()));
                     break;
                 case "*":
                     z = new ExpresionMultiplicacion();
                     z.setNumero1(x);
+                    y.setValor(String.valueOf(arreglo[i+1]));
                     z.setNumero2(y);
                     x.setValor(String.valueOf(z.intepretar()));
                     break;
                 case "/":
                     z = new ExpresionDivision();
                     z.setNumero1(x);
+                    y.setValor(String.valueOf(arreglo[i+1]));
                     z.setNumero2(y);
                     x.setValor(String.valueOf(z.intepretar()));
                     break;
@@ -65,8 +67,6 @@ public class Interpreter {
                     if (semaforo == 0){
                         x.setValor(arreglo[i]);
                         semaforo++;
-                    }else{
-                        y.setValor(arreglo[i]);
                     }
                     break;
             }
@@ -84,7 +84,7 @@ public class Interpreter {
         try {
             linea = leerArchivo();
         } catch (IOException ex) {
-            Logger.getLogger(Interpreter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InterpreterPost.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println(linea);
         arreglo = linea.toCharArray();
@@ -108,5 +108,5 @@ public class Interpreter {
         }
         System.out.println("El resultado de la operacion es: "+operar(arregloNumerosUnicos));
     }
-
+    
 }

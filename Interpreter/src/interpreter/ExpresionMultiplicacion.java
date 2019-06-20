@@ -13,7 +13,7 @@ public class ExpresionMultiplicacion extends Expresion{
 
     @Override
     public float intepretar() {
-        return this.numero2.intepretar() * this.numero1.intepretar();
+        return this.numero1.intepretar() * this.numero2.intepretar();
     }
     
 }

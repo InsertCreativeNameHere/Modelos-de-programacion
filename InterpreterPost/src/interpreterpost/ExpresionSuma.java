@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interpreter;
+package interpreterpost;
 
 /**
  *
  * @author estudiantes
  */
-public class ExpresionDivision extends Expresion {
+public class ExpresionSuma extends Expresion {
 
     @Override
     public float intepretar() {
-        return this.numero1.intepretar() / this.numero2.intepretar();
+        return this.numero1.intepretar() + this.numero2.intepretar();
     }
     
 }
