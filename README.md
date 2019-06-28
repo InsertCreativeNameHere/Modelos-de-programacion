@@ -2,7 +2,7 @@
 Modelos de programación 
 
 # Diagrama de clases
-https://github.com/InsertCreativeNameHere/Modelos-de-programacion/blob/EyeFender/Diagrama%20de%20clases.png?raw=true
+![La imagen no carga](https://github.com/InsertCreativeNameHere/Modelos-de-programacion/blob/EyeFender/Diagrama%20de%20clases.png?raw=true)
 
 
 Repositorio hecho para la clase de modelos de programación 1
